@@ -1,18 +1,12 @@
 import re
 import time
 import json
-from pprint import pprint as pp
 from urllib.parse import urlparse, parse_qs
-from configparser import ConfigParser
 from dateutil import tz
 from datetime import datetime, timedelta
-import redis
 import oauth2 as oauth
 import requests
 from requests_oauthlib import OAuth1
-
-import telegram
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 def base36encode(number, alphabet='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
