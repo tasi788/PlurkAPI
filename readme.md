@@ -13,3 +13,5 @@ plurk.authorize() # 依照指示流程（？）
 print(plruk.me())
 >>> {'verified_account': False, 'avatar_small': 'https://avatars.plurk.com/999999-small999999.gif', 'anniversary': {'days': 99, 'years': 99}, 'badges': ['9', '1000_views', '1000_plurks', '500_comments', 'upload_profile_image'], 'fans_count': 0, 'profile_views': 99, 'display_name': '踢低吸@睡眠補充'.....
 ```
+
+# 歡迎PR 因為我懶的補了
