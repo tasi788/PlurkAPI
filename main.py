@@ -1,15 +1,23 @@
+__author__ = '@DingChen_Tsai'
 import re
 import time
 import json
+
 from urllib.parse import urlparse, parse_qs
+
 from dateutil import tz
 from datetime import datetime, timedelta
+
 import oauth2 as oauth
+
 import requests
 from requests_oauthlib import OAuth1
 
 
 def base36encode(number, alphabet='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+    '''
+    plurk id encode
+    '''
     if not isinstance(number, (int, float)):
         raise TypeError('number must be an integer')
     base36 = ''
@@ -26,6 +34,9 @@ def base36encode(number, alphabet='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
 
 
 def base36decode(number):
+    '''
+    plurk id encode
+    '''
     return int(number, 36)
 
 
@@ -96,7 +107,7 @@ class user(plurkapi):
         api_url = f'{self.base_url}/APP/Users/me'
         r = requests.get(api_url, auth=self.oauth)
         if r.status_code == 200:
-            return r
+            return r.json()
 
     def update(self, full_name=None, email=None, display_name=None, privacy=None):
         '''
